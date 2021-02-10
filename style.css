@@ -1,0 +1,71 @@
+/* ------ CSS3 - Parallax On Hover ------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 1s;
+}
+body {
+    background-color: #c2dce3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d84747' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+h1 {
+    font-family: 'Staatliches', cursive; /* font-family: 'Arsenal', sans-serif;  | font-family: 'Fredericka the Great', cursive | font-family: 'Syncopate', sans-serif;  */
+    font-size: 4em;
+    color: #e80202;
+    text-shadow: 1px 4px 1px #700000;
+    filter: drop-shadow(-1px 6px 3px rgba(133, 133, 133, 0.5));
+    text-align: center;
+    margin-top: 40px;
+}
+.wrapper {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 1000px;
+}
+.frame {
+    position: absolute;
+    border: 5px solid black;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 0 rgba(0,0,0,0.7);
+}
+
+#bg {
+    position: absolute;
+    background: url('spider-verse-city2.jpg');
+    width: 0%;
+    height: 0%;
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: repeat-x; 
+    transform: translateX(-200px) translateY(-115px) scale(0.35); /* Parameters parallax on a 2D card  */
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+.wrapper:hover #bg {
+    background-position: -10% 90%;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    transform: translateX(-120px) translateY(-80px) translateZ(0px) rotateY(1deg) rotateZ(-1deg) scale(0.35); /*  Parameters parallax on a 2D card  */
+}
+
+.hero {
+    position: absolute;
+    height: 400px;
+    top: -15px;
+    right: 150px;
+}
+.wrapper:hover .frame {
+    background-position: -10% 90%;
+    transform: rotateY(25deg) rotateZ(-15deg) translateZ(10px); 
+    box-shadow: -35px 5px 10px rgba(0,0,0,0.2);
+}
+.wrapper:hover .hero {
+    transform: translateX(-5px) translateY(0px) rotate(14deg) scale(1.0);
+}
